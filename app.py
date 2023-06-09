@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify
 import requests
 import string
 import random
+import subprocess 
 
 app = Flask(__name__)
 
@@ -422,4 +423,7 @@ def handle_request():
 
 
 if __name__ == '__main__':
-  app.run(port=6969)
+  app.run()
+  subprocess.Popen(['python3', 'bot.py'], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+  
